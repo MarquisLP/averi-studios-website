@@ -29,7 +29,6 @@ function Apps () {
       >
         <Typography
           variant='h2'
-          color='primary'
         >
           <Box
             fontWeight='fontWeightBold'

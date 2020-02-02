@@ -27,7 +27,7 @@ function Intro () {
       >
         <Box
           fontWeight='fontWeightBold'
-          fontSize='2em'
+          fontSize='1.75em'
         >
           Averi Studios
         </Box>
