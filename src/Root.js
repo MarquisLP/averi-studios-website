@@ -1,6 +1,7 @@
 import React from 'react'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import Intro from './Intro'
+import Apps from './apps/Apps'
 
 const appTheme = createMuiTheme({
   palette: {
@@ -15,6 +16,7 @@ function Root () {
   return (
     <ThemeProvider theme={appTheme}>
       <Intro />
+      <Apps />
     </ThemeProvider>
   )
 }
