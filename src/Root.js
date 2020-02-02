@@ -11,7 +11,7 @@ const appTheme = createMuiTheme({
   }
 })
 
-function App () {
+function Root () {
   return (
     <ThemeProvider theme={appTheme}>
       <Intro />
@@ -19,4 +19,4 @@ function App () {
   )
 }
 
-export default App
+export default Root
