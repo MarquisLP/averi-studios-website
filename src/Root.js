@@ -2,6 +2,7 @@ import React from 'react'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import Intro from './Intro'
 import Apps from './apps/Apps'
+import Announcements from './announcements/Announcements'
 
 const appTheme = createMuiTheme({
   palette: {
@@ -17,6 +18,7 @@ function Root () {
     <ThemeProvider theme={appTheme}>
       <Intro />
       <Apps />
+      <Announcements />
     </ThemeProvider>
   )
 }

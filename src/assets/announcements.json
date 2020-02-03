@@ -1,0 +1,10 @@
+[
+  {
+    "id": "1",
+    "date": "2020-02-04",
+    "title": "Become a Beta Tester for World Scribe Web!",
+    "description": {
+      "__html": "We're excited to announce that World Scribe will soon be coming to the web as a web app!<br />This new app will have all of the Android app's functionality, alongside new features such as custom Categories.<br /><br />Before the app launches, we'd like to hear YOUR feedback on the current prototype. If you're interested in becoming a beta tester, please send an email from a Gmail account to:<br/><br/>averistudios@gmail.com<br/><br/>The app uses Google Authentication, so the email MUST be from a Gmail account.<br/>Also note that due to server load, we cannot guarantee you a spot on the testing team. We will respond to you via email to let you know if you've been accepted or not.<br/><br/>Q: Will development of the Android app be abandoned?<br/>A: Nope! The Android app will continue receiving updates for bug fixes and other small improvements. However, major new features will likely go to the web app instead, so stay tuned!"
+    }
+  }
+]
