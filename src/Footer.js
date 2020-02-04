@@ -4,9 +4,9 @@ import { Typography, Box } from '@material-ui/core'
 
 const useStyles = makeStyles({
   wrapper: {
-    backgroundColor: '#27a4f3',
+    backgroundColor: 'black',
     marginTop: 50,
-    padding: '40px 20px 15px 20px'
+    padding: '20px 20px 15px 20px'
   },
   content: {
     display: 'flex',
