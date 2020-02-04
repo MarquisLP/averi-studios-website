@@ -11,8 +11,8 @@ const useStyles = makeStyles({
   content: {
     display: 'flex',
     flexDirection: 'column',
-    paddingLeft: 30,
-    paddingRight: 30
+    paddingLeft: 50,
+    paddingRight: 50
   },
   header: {
     alignSelf: 'center'

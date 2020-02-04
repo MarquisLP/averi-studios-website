@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '30vh',
+    marginTop: '35vh',
     marginBottom: '50vh'
   }
 })
