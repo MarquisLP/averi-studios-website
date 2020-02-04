@@ -5,7 +5,6 @@ import Apps from './apps/Apps'
 import Announcements from './announcements/Announcements'
 import Footer from './Footer'
 import NavigationDrawer from './NavigationDrawer'
-import clsx from 'clsx'
 
 const drawerWidth = 240
 
