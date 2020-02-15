@@ -32,8 +32,8 @@ function NavigationDrawer (props) {
         <ListItem
           button
           onClick={() => {
+            props.setLastSelection('intro')
             props.scrollToRef(props.sectionRefs.intro)
-            props.setLastSelection('apps')
           }}
           key='intro'
         >
@@ -49,8 +49,8 @@ function NavigationDrawer (props) {
         <ListItem
           button
           onClick={() => {
-            props.scrollToRef(props.sectionRefs.apps)
             props.setLastSelection('apps')
+            props.scrollToRef(props.sectionRefs.apps)
           }}
           key='apps'
         >
