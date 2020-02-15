@@ -43,7 +43,8 @@ function Root () {
   const sectionRefs = {
     intro: useRef(null),
     apps: useRef(null),
-    announcements: useRef(null)
+    announcements: useRef(null),
+    footer: 'footer'
   }
 
   const [drawerIsOpen, setDrawerIsOpen] = useState(true)
@@ -51,7 +52,11 @@ function Root () {
   const [lastDrawerSelection, setLastDrawerSelection] = useState('intro')
 
   function scrollToRef (ref) {
-    window.scrollTo(0, ref.current.offsetTop)
+    if (ref === 'footer') {
+      window.scrollTo(0, document.body.scrollHeight)
+    } else {
+      window.scrollTo(0, ref.current.offsetTop)
+    }
 
     if (screenIsMobile) {
       setDrawerIsOpen(false)

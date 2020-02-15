@@ -84,7 +84,7 @@ function NavigationDrawer (props) {
           button
           onClick={() => {
             props.setLastSelection('contact')
-            props.onClose()
+            props.scrollToRef(props.sectionRefs.footer)
           }}
           key='contact'
         >
