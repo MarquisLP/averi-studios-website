@@ -5,9 +5,9 @@ import Apps from './apps/Apps'
 import Announcements from './announcements/Announcements'
 import Footer from './Footer'
 import NavigationDrawer from './NavigationDrawer'
-import { AppBar, Toolbar, IconButton } from '@material-ui/core'
+import { AppBar, Toolbar, IconButton, Snackbar, Button } from '@material-ui/core'
 
-import { Menu as MenuIcon } from '@material-ui/icons'
+import { Menu as MenuIcon, Close as CloseIcon } from '@material-ui/icons'
 
 const drawerWidth = 240
 const mobileScreenMaxWidth = 768
@@ -50,6 +50,7 @@ function Root () {
   const [drawerIsOpen, setDrawerIsOpen] = useState(true)
   const [screenIsMobile, setScreenIsMobile] = useState(false)
   const [lastDrawerSelection, setLastDrawerSelection] = useState('intro')
+  const [betaNotificationIsOpen, setBetaNotificationIsOpen] = useState(true)
 
   function scrollToRef (ref) {
     if (ref === 'footer') {
@@ -79,6 +80,17 @@ function Root () {
 
   function handleMenuButtonClick () {
     setDrawerIsOpen(true)
+  }
+
+  function handleLearnMoreAboutBetaButtonClick () {
+    scrollToRef(sectionRefs.announcements)
+    setBetaNotificationIsOpen(false)
+  }
+
+  function handleCloseBetaNotification (e, reason) {
+    if (reason !== 'clickaway') {
+      setBetaNotificationIsOpen(false)
+    }
   }
 
   useEffect(() => {
@@ -157,6 +169,35 @@ function Root () {
             <Footer />
           </div>
         </main>
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center'
+          }}
+          open={betaNotificationIsOpen}
+          autoHideDuration={10000}
+          onClose={handleCloseBetaNotification}
+          message='A new version of World Scribe is coming to the web! You can help out by becoming a beta tester.'
+          action={
+            <>
+              <Button
+                color='primary'
+                size='small'
+                onClick={handleLearnMoreAboutBetaButtonClick}
+              >
+                LEARN MORE
+              </Button>
+              <IconButton
+                onClick={handleCloseBetaNotification}
+              >
+                <CloseIcon
+                  fontSize='small'
+                  color='secondary'
+                />
+              </IconButton>
+            </>
+          }
+        />
       </div>
     </ThemeProvider>
   )
