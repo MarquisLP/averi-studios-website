@@ -43,15 +43,16 @@ function Root () {
   const sectionRefs = {
     intro: useRef(null),
     apps: useRef(null),
-    announcements: useRef(null),
-    footer: useRef(null)
+    announcements: useRef(null)
   }
 
   const [drawerIsOpen, setDrawerIsOpen] = useState(true)
   const [screenIsMobile, setScreenIsMobile] = useState(false)
+  const [lastDrawerSelection, setLastDrawerSelection] = useState('intro')
 
   function scrollToRef (ref) {
     window.scrollTo(0, ref.current.offsetTop)
+
     if (screenIsMobile) {
       setDrawerIsOpen(false)
     }
@@ -82,6 +83,15 @@ function Root () {
       window.removeEventListener('resize', handleWindowResize)
     }
   })
+
+  // There's a bug with Material UI's Navigation Drawer that causes the page to
+  // scroll up a bit when the drawer is closed at the bottom of the page.
+  // So this effect causes the window to scroll down to the footer after 'Contact' is selected.
+  useEffect(() => {
+    if ((!drawerIsOpen) && (lastDrawerSelection === 'contact')) {
+      window.scrollTo(0, document.body.scrollHeight)
+    }
+  }, [drawerIsOpen])
 
   // Check screen size and make adjustments on the first render.
   useEffect(() => {
@@ -121,6 +131,7 @@ function Root () {
           scrollToRef={scrollToRef}
           variant={screenIsMobile ? 'temporary' : 'persistent'}
           onClose={handleCloseDrawer}
+          setLastSelection={setLastDrawerSelection}
         />
         <main
           className={classes.content}
@@ -137,9 +148,7 @@ function Root () {
           >
             <Announcements />
           </div>
-          <div
-            ref={sectionRefs.footer}
-          >
+          <div>
             <Footer />
           </div>
         </main>

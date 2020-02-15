@@ -31,7 +31,10 @@ function NavigationDrawer (props) {
       <List>
         <ListItem
           button
-          onClick={() => props.scrollToRef(props.sectionRefs.intro)}
+          onClick={() => {
+            props.scrollToRef(props.sectionRefs.intro)
+            props.setLastSelection('apps')
+          }}
           key='intro'
         >
           <ListItemIcon>
@@ -45,7 +48,10 @@ function NavigationDrawer (props) {
         </ListItem>
         <ListItem
           button
-          onClick={() => props.scrollToRef(props.sectionRefs.apps)}
+          onClick={() => {
+            props.scrollToRef(props.sectionRefs.apps)
+            props.setLastSelection('apps')
+          }}
           key='apps'
         >
           <ListItemIcon>
@@ -59,7 +65,10 @@ function NavigationDrawer (props) {
         </ListItem>
         <ListItem
           button
-          onClick={() => props.scrollToRef(props.sectionRefs.announcements)}
+          onClick={() => {
+            props.setLastSelection('announcements')
+            props.scrollToRef(props.sectionRefs.announcements)
+          }}
           key='announcements'
         >
           <ListItemIcon>
@@ -73,7 +82,10 @@ function NavigationDrawer (props) {
         </ListItem>
         <ListItem
           button
-          onClick={() => props.scrollToRef(props.sectionRefs.footer)}
+          onClick={() => {
+            props.setLastSelection('contact')
+            props.onClose()
+          }}
           key='contact'
         >
           <ListItemIcon>
