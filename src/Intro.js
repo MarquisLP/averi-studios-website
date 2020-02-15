@@ -26,6 +26,7 @@ function Intro () {
         color='primary'
       >
         <Box
+          textAlign='center'
           fontWeight='fontWeightBold'
           fontSize='1.75em'
         >
@@ -36,7 +37,11 @@ function Intro () {
         variant='h3'
         color='primary'
       >
-        Apps as clear as blue skies
+        <Box
+          textAlign='center'
+        >
+          Apps as clear as blue skies
+        </Box>
       </Typography>
     </div>
   )

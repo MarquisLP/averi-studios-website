@@ -24,7 +24,8 @@ function NavigationDrawer (props) {
         paper: classes.drawerPaper
       }}
       open={props.isOpen}
-      variant='persistent'
+      variant={props.variant}
+      onClose={props.variant === 'temporary' ? props.onClose : null}
       anchor='left'
     >
       <List>

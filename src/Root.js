@@ -1,12 +1,16 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles'
 import Intro from './Intro'
 import Apps from './apps/Apps'
 import Announcements from './announcements/Announcements'
 import Footer from './Footer'
 import NavigationDrawer from './NavigationDrawer'
+import { AppBar, Toolbar, IconButton } from '@material-ui/core'
+
+import { Menu as MenuIcon } from '@material-ui/icons'
 
 const drawerWidth = 240
+const mobileScreenMaxWidth = 768
 
 const appTheme = createMuiTheme({
   palette: {
@@ -34,8 +38,6 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
-
 function Root () {
   const classes = useStyles()
   const sectionRefs = {
@@ -45,23 +47,80 @@ function Root () {
     footer: useRef(null)
   }
 
-  let drawerIsOpen = true
+  const [drawerIsOpen, setDrawerIsOpen] = useState(true)
+  const [screenIsMobile, setScreenIsMobile] = useState(false)
 
-  function setDrawerOpenState (isOpen) {
-    drawerIsOpen = isOpen
+  function scrollToRef (ref) {
+    window.scrollTo(0, ref.current.offsetTop)
+    if (screenIsMobile) {
+      setDrawerIsOpen(false)
+    }
   }
+
+  function handleWindowResize () {
+    if (window.innerWidth <= mobileScreenMaxWidth) {
+      setDrawerIsOpen(false)
+      setScreenIsMobile(true)
+    } else {
+      setDrawerIsOpen(true)
+      setScreenIsMobile(false)
+    }
+  }
+
+  function handleCloseDrawer () {
+    setDrawerIsOpen(false)
+  }
+
+  function handleMenuButtonClick () {
+    setDrawerIsOpen(true)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowResize)
+
+    return function cleanup () {
+      window.removeEventListener('resize', handleWindowResize)
+    }
+  })
+
+  // Check screen size and make adjustments on the first render.
+  useEffect(() => {
+    handleWindowResize()
+  }, [])
 
   return (
     <ThemeProvider theme={appTheme}>
       <div
         className={classes.root}
       >
+        {
+          screenIsMobile
+            ? (
+              <AppBar
+                position='fixed'
+              >
+                <Toolbar>
+                  <IconButton
+                    edge='start'
+                    onClick={handleMenuButtonClick}
+                  >
+                    <MenuIcon
+                      color='secondary'
+                    />
+                  </IconButton>
+                </Toolbar>
+              </AppBar>
+            )
+            : null
+        }
         <NavigationDrawer
           drawerWidth={drawerWidth}
           isOpen={drawerIsOpen}
-          setOpenState={setDrawerOpenState}
+          setOpenState={setDrawerIsOpen}
           sectionRefs={sectionRefs}
           scrollToRef={scrollToRef}
+          variant={screenIsMobile ? 'temporary' : 'persistent'}
+          onClose={handleCloseDrawer}
         />
         <main
           className={classes.content}
