@@ -28,7 +28,7 @@ function Intro () {
         <Box
           textAlign='center'
           fontWeight='fontWeightBold'
-          fontSize='1.75em'
+          fontSize='1.5em'
         >
           Averi Studios
         </Box>
