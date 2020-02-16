@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles'
 import Intro from './Intro'
 import Apps from './apps/Apps'
@@ -10,7 +11,6 @@ import { AppBar, Toolbar, IconButton, Snackbar, Button } from '@material-ui/core
 import { Menu as MenuIcon, Close as CloseIcon } from '@material-ui/icons'
 
 const drawerWidth = 240
-const mobileScreenMaxWidth = 768
 
 const appTheme = createMuiTheme({
   palette: {
@@ -47,8 +47,9 @@ function Root () {
     footer: 'footer'
   }
 
-  const [drawerIsOpen, setDrawerIsOpen] = useState(true)
-  const [screenIsMobile, setScreenIsMobile] = useState(false)
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
+  const [drawerIsOpen, setDrawerIsOpen] = useState(!isTabletOrMobile) // Drawer is initially closed on mobile so that it doesn't get in the way
   const [lastDrawerSelection, setLastDrawerSelection] = useState('intro')
   const [betaNotificationIsOpen, setBetaNotificationIsOpen] = useState(true)
 
@@ -59,18 +60,8 @@ function Root () {
       window.scrollTo(0, ref.current.offsetTop)
     }
 
-    if (screenIsMobile) {
+    if (isTabletOrMobile) {
       setDrawerIsOpen(false)
-    }
-  }
-
-  function handleWindowResize () {
-    if (window.innerWidth <= mobileScreenMaxWidth) {
-      setDrawerIsOpen(false)
-      setScreenIsMobile(true)
-    } else {
-      setDrawerIsOpen(true)
-      setScreenIsMobile(false)
     }
   }
 
@@ -93,14 +84,6 @@ function Root () {
     }
   }
 
-  useEffect(() => {
-    window.addEventListener('resize', handleWindowResize)
-
-    return function cleanup () {
-      window.removeEventListener('resize', handleWindowResize)
-    }
-  })
-
   // There's a bug with Material UI's Navigation Drawer that causes the page to
   // scroll up a bit when the drawer is closed at the bottom of the page.
   // So this effect causes the window to scroll down to the footer after 'Contact' is selected.
@@ -110,18 +93,13 @@ function Root () {
     }
   }, [drawerIsOpen])
 
-  // Check screen size and make adjustments on the first render.
-  useEffect(() => {
-    handleWindowResize()
-  }, [])
-
   return (
     <ThemeProvider theme={appTheme}>
       <div
         className={classes.root}
       >
         {
-          screenIsMobile
+          isTabletOrMobile
             ? (
               <AppBar
                 position='fixed'
@@ -146,7 +124,7 @@ function Root () {
           setOpenState={setDrawerIsOpen}
           sectionRefs={sectionRefs}
           scrollToRef={scrollToRef}
-          variant={screenIsMobile ? 'temporary' : 'persistent'}
+          variant={isTabletOrMobile ? 'temporary' : 'persistent'}
           onClose={handleCloseDrawer}
           setLastSelection={setLastDrawerSelection}
         />
