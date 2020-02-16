@@ -48,6 +48,10 @@ function Root () {
   }
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  // Prevent page content from going off-screen on mobile devices
+  if (isTabletOrMobile) {
+    document.body.style.zoom = '75%'
+  }
 
   const [drawerIsOpen, setDrawerIsOpen] = useState(!isTabletOrMobile) // Drawer is initially closed on mobile so that it doesn't get in the way
   const [lastDrawerSelection, setLastDrawerSelection] = useState('intro')
