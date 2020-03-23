@@ -9,6 +9,7 @@ import NavigationDrawer from './NavigationDrawer'
 import { AppBar, Toolbar, IconButton, Snackbar, Button } from '@material-ui/core'
 
 import { Menu as MenuIcon, Close as CloseIcon } from '@material-ui/icons'
+import Team from './team/Team'
 
 const drawerWidth = 240
 
@@ -43,6 +44,7 @@ function Root () {
   const sectionRefs = {
     intro: useRef(null),
     apps: useRef(null),
+    team: useRef(null),
     announcements: useRef(null),
     footer: 'footer'
   }
@@ -141,6 +143,11 @@ function Root () {
             ref={sectionRefs.apps}
           >
             <Apps />
+          </div>
+          <div
+            ref={sectionRefs.team}
+          >
+            <Team />
           </div>
           <div
             ref={sectionRefs.announcements}
