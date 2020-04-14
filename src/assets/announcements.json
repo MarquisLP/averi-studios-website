@@ -2,9 +2,10 @@
   {
     "id": "1",
     "date": "2020-02-04",
-    "title": "Become a Beta Tester for World Scribe Web!",
+    "title": "Manage all  your IDs in one place with Iden-T-Fy!",
+    "image": "iden-t-fy_launch.jpg",
     "description": {
-      "__html": "We're excited to announce that World Scribe will soon be coming to the web as a web app!<br />This new app will have all of the Android version's functionality, alongside new features such as custom Categories.<br /><br />Before the app launches, we want YOUR help to make it better. If you're interested in becoming a beta tester, please send an email from a Gmail account to:<br/><br/><b>averistudios@gmail.com</b><br/>The subject line of the email MUST begin with <b>BETA-SIGNUP</b>.<br/><br/>The app uses Google Authentication, so the email MUST be from a Gmail account.<br/>Also note that due to server load, we cannot always guarantee a spot on the team. We will respond to you via email to let you know if you've been accepted or not.<br/><br/><b>Q:</b> Will development of the Android app be abandoned?<br/><b>A:</b> Nope! The Android app will continue receiving updates for bug fixes and other small improvements. However, major new features will likely go to the web app instead."
+      "__html": "Averi Studios is proud to announce our new project: <b>Iden-T-Fy</b>.<br />It's an app that replaces physical ID cards with a central, digital ID hub on your phone. Rather than taking a photo of your ID cards like most other identification apps, the Iden-T-Fy app provides a single authentication profile that organizations can use to verify your identity.<br /><br />To learn more, send us an email at:<br /><b>averistudios@gmail.com</b>"
     }
   }
 ]

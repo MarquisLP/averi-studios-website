@@ -166,7 +166,7 @@ function Root () {
           open={betaNotificationIsOpen}
           autoHideDuration={10000}
           onClose={handleCloseBetaNotification}
-          message='A new version of World Scribe is coming to the web! You can help out by becoming a beta tester.'
+          message='Averi Studios is building a new way to store your IDs!'
           action={
             <>
               <Button

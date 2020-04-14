@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
-import { Typography, Box } from '@material-ui/core'
+import { Typography, Box, CardMedia, Card } from '@material-ui/core'
 import announcements from '../assets/announcements'
 
 const useStyles = makeStyles({
@@ -22,6 +22,9 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     alignSelf: 'flex-start',
     marginTop: 30
+  },
+  photo: {
+    height: 600
   }
 })
 
@@ -46,6 +49,31 @@ function AnnouncementItem (props) {
       >
         {props.title}
       </Typography>
+      {
+        /*
+        props.image === undefined
+          ? null
+          : (
+              <Card>
+              <CardMedia
+                className={classes.photo}
+                // image={`/images/announcements/${props.image}`}
+                image={`/images/announcements/iden-t-fy_launch.jpg`}
+                title={props.data.name}
+              />
+              </Card>
+            <div
+              className={classes.photo}
+            >
+              <img
+                src={`/images/announcements/iden-t-fy_launch.jpg`}
+                // src={`/images/announcements/${props.image}`}
+                // className={classes.photo}
+              />
+            </div>
+          )
+        */
+      }
       <Typography
         className={classes.description}
         variant='body1'
