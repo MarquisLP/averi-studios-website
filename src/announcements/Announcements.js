@@ -20,11 +20,8 @@ const useStyles = makeStyles({
   announcementsList: {
     display: 'flex',
     flexDirection: 'column',
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
     marginTop: 30
-  },
-  announcementItemHeader: {
-    marginBottom: 10
   }
 })
 
@@ -38,11 +35,14 @@ function AnnouncementItem (props) {
   const classes = useStyles()
 
   return (
-    <>
-      <div
-        style={{
-          marginBottom: 20
-        }}
+    <Grid
+      container
+      direction='column'
+      alignItems='center'
+      spacing={3}
+    >
+      <Grid
+        item
       >
         <Grid
           container
@@ -69,41 +69,49 @@ function AnnouncementItem (props) {
             </Typography>
           </Grid>
         </Grid>
-      </div>
+      </Grid>
       <Grid
-        container
-        direction='column'
-        alignItems='center'
-        spacing={2}
+        item
       >
-        {
-          props.image === undefined
-            ? null
-            : (
-              <Grid
-                item
-              >
-                <img
-                  src={`/images/announcements/${props.image}`}
-                  alt={props.imageAlt === undefined ? '' : props.imageAlt}
-                />
-              </Grid>
-            )
-        }
         <Grid
-          item
+          container
+          direction='column'
+          alignItems='center'
+          spacing={2}
         >
-          <Typography
-            className={classes.description}
-            variant='body1'
+          {
+            props.image === undefined
+              ? null
+              : (
+                <Grid
+                  item
+                >
+                  <img
+                    src={`/images/announcements/${props.image}`}
+                    alt={props.imageAlt === undefined ? '' : props.imageAlt}
+                  />
+                </Grid>
+              )
+          }
+          <Grid
+            item
+            className={classes.announcementItemDescription}
+            style={{
+              maxWidth: 1000
+            }}
           >
-            <div
-              dangerouslySetInnerHTML={props.description}
-            />
-          </Typography>
+            <Typography
+              className={classes.description}
+              variant='body1'
+            >
+              <div
+                dangerouslySetInnerHTML={props.description}
+              />
+            </Typography>
+          </Grid>
         </Grid>
       </Grid>
-    </>
+    </Grid>
   )
 }
 
