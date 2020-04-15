@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
-import { Typography, Box, CardMedia, Card } from '@material-ui/core'
+import { Typography, Box, Grid } from '@material-ui/core'
 import announcements from '../assets/announcements'
 
 const useStyles = makeStyles({
@@ -23,8 +23,8 @@ const useStyles = makeStyles({
     alignSelf: 'flex-start',
     marginTop: 30
   },
-  photo: {
-    height: 600
+  announcementItemHeader: {
+    marginBottom: 10
   }
 })
 
@@ -38,51 +38,72 @@ function AnnouncementItem (props) {
   const classes = useStyles()
 
   return (
-    <div>
-      <Typography
-        variant='subtitle1'
+    <>
+      <div
+        style={{
+          marginBottom: 20
+        }}
       >
-        {props.date}
-      </Typography>
-      <Typography
-        variant='h3'
-      >
-        {props.title}
-      </Typography>
-      {
-        /*
-        props.image === undefined
-          ? null
-          : (
-              <Card>
-              <CardMedia
-                className={classes.photo}
-                // image={`/images/announcements/${props.image}`}
-                image={`/images/announcements/iden-t-fy_launch.jpg`}
-                title={props.data.name}
-              />
-              </Card>
-            <div
-              className={classes.photo}
+        <Grid
+          container
+          direction='column'
+          alignItems='flex-start'
+          spacing={0}
+        >
+          <Grid
+            item
+          >
+            <Typography
+              variant='subtitle1'
             >
-              <img
-                src={`/images/announcements/iden-t-fy_launch.jpg`}
-                // src={`/images/announcements/${props.image}`}
-                // className={classes.photo}
-              />
-            </div>
-          )
-        */
-      }
-      <Typography
-        className={classes.description}
-        variant='body1'
+              {props.date}
+            </Typography>
+          </Grid>
+          <Grid
+            item
+          >
+            <Typography
+              variant='h3'
+            >
+              {props.title}
+            </Typography>
+          </Grid>
+        </Grid>
+      </div>
+      <Grid
+        container
+        direction='column'
+        alignItems='center'
+        spacing={2}
       >
-        <div
-          dangerouslySetInnerHTML={props.description}
-        />
-      </Typography>
-    </div>
+        {
+          props.image === undefined
+            ? null
+            : (
+              <Grid
+                item
+              >
+                <img
+                  src={`/images/announcements/${props.image}`}
+                  alt={props.imageAlt === undefined ? '' : props.imageAlt}
+                />
+              </Grid>
+            )
+        }
+        <Grid
+          item
+        >
+          <Typography
+            className={classes.description}
+            variant='body1'
+          >
+            <div
+              dangerouslySetInnerHTML={props.description}
+            />
+          </Typography>
+        </Grid>
+      </Grid>
+    </>
   )
 }
 
@@ -96,6 +117,8 @@ function Announcements () {
         title={announcement.title}
         date={announcement.date}
         description={announcement.description}
+        image={announcement.image}
+        imageAlt={announcement.imageAlt}
       />
     )
   })
