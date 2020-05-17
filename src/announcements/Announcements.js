@@ -18,9 +18,6 @@ const useStyles = makeStyles({
     alignSelf: 'center'
   },
   announcementsList: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignSelf: 'center',
     marginTop: 30
   }
 })
@@ -120,14 +117,18 @@ function Announcements () {
 
   const announcementItems = announcements.map((announcement) => {
     return (
-      <AnnouncementItem
+      <Grid
+        item
         key={announcement.id}
-        title={announcement.title}
-        date={announcement.date}
-        description={announcement.description}
-        image={announcement.image}
-        imageAlt={announcement.imageAlt}
-      />
+      >
+        <AnnouncementItem
+          title={announcement.title}
+          date={announcement.date}
+          description={announcement.description}
+          image={announcement.image}
+          imageAlt={announcement.imageAlt}
+        />
+      </Grid>
     )
   })
 
@@ -148,11 +149,15 @@ function Announcements () {
             Announcements
           </Box>
         </Typography>
-        <div
+        <Grid
+          container
+          direction='column'
+          alignItems='center'
+          spacing={10}
           className={classes.announcementsList}
         >
           {announcementItems}
-        </div>
+        </Grid>
       </div>
     </div>
   )
