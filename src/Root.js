@@ -166,7 +166,7 @@ function Root () {
           open={betaNotificationIsOpen}
           autoHideDuration={10000}
           onClose={handleCloseBetaNotification}
-          message='Averi Studios is building a new way to store your IDs!'
+          message='Averi Studios has launched a new way to store your IDs!'
           action={
             <>
               <Button
