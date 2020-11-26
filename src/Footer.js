@@ -33,7 +33,7 @@ function Footer () {
           <Box
             fontWeight='fontWeightBold'
           >
-            Contact: averistudios@gmail.com
+            Contact: support@averistudios.com
           </Box>
         </Typography>
         <Typography
