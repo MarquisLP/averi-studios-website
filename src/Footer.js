@@ -43,7 +43,7 @@ function Footer () {
           <Box
             fontWeight='fontWeightBold'
           >
-            &copy; {new Date().getFullYear()} Averi Studios
+            &copy; {new Date().getFullYear()} Averi Studios Inc.
           </Box>
         </Typography>
       </div>
