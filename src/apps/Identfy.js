@@ -97,7 +97,7 @@ function Identfy () {
             variant='subtitle1'
             className={classes.websiteLink}
           >
-            <a style={{ color: 'blue', textDecoration: 'none', fontSize: '1.3em' }} href='www.iden-t-fy.com' target='_blank'><b>Click here to learn more!</b></a>
+            <a style={{ color: 'blue', textDecoration: 'none', fontSize: '1.3em' }} href='https://www.iden-t-fy.com' target='_blank'><b>Click here to learn more!</b></a>
           </Typography>
         </ExpansionPanelActions>
       </ExpansionPanel>
