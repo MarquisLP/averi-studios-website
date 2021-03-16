@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
-import { ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails } from '@material-ui/core'
+import { ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails, ExpansionPanelActions } from '@material-ui/core'
 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import AppStoreIcon from '../assets/app_store_icon.svg'
@@ -24,6 +24,9 @@ const useStyles = makeStyles({
   },
   storeButton: {
     cursor: 'pointer'
+  },
+  websiteLink: {
+    marginRight: 20
   }
 })
 
@@ -59,11 +62,6 @@ function Identfy () {
             >
               Digital ID profiles for clubs and organizations
             </Typography>
-            <Typography
-              variant='subtitle1'
-            >
-              <a style={{ color: 'blue', textDecoration: 'none' }} href='https://iden-t-fy.com'><b>Click here to learn more!</b></a>
-            </Typography>
           </div>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
@@ -94,6 +92,14 @@ function Identfy () {
             />
           </div>
         </ExpansionPanelDetails>
+        <ExpansionPanelActions>
+          <Typography
+            variant='subtitle1'
+            className={classes.websiteLink}
+          >
+            <a style={{ color: 'blue', textDecoration: 'none', fontSize: '1.3em' }} href='https://iden-t-fy.com' target='_blank'><b>Click here to learn more!</b></a>
+          </Typography>
+        </ExpansionPanelActions>
       </ExpansionPanel>
     </div>
   )
