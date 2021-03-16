@@ -2,7 +2,7 @@
   {
     "id": "1",
     "name": "Mark Padilla",
-    "bio": "A fourth-year Computer Science student at the University of Toronto. Makes user-focused software for mobile and web. Currently in love with Flutter. A bookworm and write-aholic with an ear for soundtracks and Celtic music.",
+    "bio": "An alumnus of Computer Science from the University of Toronto. Makes user-focused software for mobile and web. Currently in love with Flutter. A bookworm and write-aholic with an ear for soundtracks and Celtic music.",
     "image": "mark_padilla.jpg",
     "linkedIn": "https://www.linkedin.com/in/mark-jj-padilla/",
     "gitHub": "https://github.com/MarquisLP/"
@@ -10,7 +10,7 @@
   {
     "id": "2",
     "name": "Aradhya Kunwar",
-    "bio": "A senior student at UofT majoring in Computer Science. Has a niche for building web APIs and backend systems. Currently exploring the vastness of Node.js. Enjoys playing soccer both on the console and the turf.",
+    "bio": "A UofT Computer Science alumnus. Has a niche for building web APIs and backend systems for user-centric software. Currently exploring the vastness of Node.js. Enjoys playing soccer both on the console and the turf.",
     "image": "aradhya_kunwar.jpg",
     "linkedIn": "https://www.linkedin.com/in/aradhya-kunwar/",
     "gitHub": "https://github.com/aunwarkraft/"
