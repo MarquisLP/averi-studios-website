@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, CardActionArea, CardMedia, CardContent, Typography, makeStyles, CardActions, IconButton } from '@material-ui/core'
-import { LinkedIn as LinkedInIcon, GitHub as GitHubIcon } from '@material-ui/icons'
+import { LinkedIn as LinkedInIcon, GitHub as GitHubIcon, Home as HomeIcon } from '@material-ui/icons'
 
 const useStyles = makeStyles({
   card: {
@@ -16,6 +16,10 @@ const useStyles = makeStyles({
 
 export default function Profile (props) {
   const classes = useStyles()
+
+  function handleHomePageButtonClick () {
+    window.open(props.data.homepage, '_blank')
+  }
 
   function handleLinkedInButtonClick () {
     window.open(props.data.linkedIn, '_blank')
@@ -53,6 +57,17 @@ export default function Profile (props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
+        {
+          props.data.homepage === undefined
+            ? null
+            : (
+              <IconButton
+                onClick={handleHomePageButtonClick}
+              >
+                <HomeIcon />
+              </IconButton>
+            )
+        }
         {
           props.data.linkedIn === undefined
             ? null
