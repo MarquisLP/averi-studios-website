@@ -8,13 +8,5 @@
     "description": {
     "__html": "Averi Studios Inc. is proud to launch its newest project: <b>iden-T-fy</b>!<br /><br />It's an iOS, Android, and web app that replaces physical ID cards with a central, digitized ID hub on your phone.<br />Instead of taking a photo of your ID cards like other identification apps, iden-T-fy provides a single authentication profile that organizations can use to verify your identity.<br /><br />To learn more, check out the <b><a href=\"https://mark-jj-padilla.medium.com/introducing-iden-t-fy-bb2438ebc1b0\">press release</a></b> or visit the official website at:<br /><center><h2><a href=\"https://www.iden-t-fy.com\">www.iden-t-fy.com</a></h2></center></b>"
     }
-  },
-  {
-    "id": "1",
-    "date": "2020-02-04",
-    "title": "Become a Beta Tester for World Scribe Web!",
-    "description": {
-      "__html": "We're excited to announce that World Scribe will soon be coming to the web as a web app!<br />This new app will have all of the Android version's functionality, alongside new features such as custom Categories.<br /><br />Before the app launches, we want YOUR help to make it better. If you're interested in becoming a beta tester, please send an email from a Gmail account to:<br/><br/><b>support@averistudios.com</b><br/>The subject line of the email MUST begin with <b>BETA-SIGNUP</b>.<br/><br/>The app uses Google Authentication, so the email MUST be from a Gmail account.<br/>Also note that due to server load, we cannot always guarantee a spot on the team. We will respond to you via email to let you know if you've been accepted or not.<br/><br/><b>Q:</b> Will development of the Android app be abandoned?<br/><b>A:</b> Nope! The Android app will continue receiving updates for bug fixes and other small improvements. However, major new features will likely go to the web app instead."
-    }
   }
 ]
