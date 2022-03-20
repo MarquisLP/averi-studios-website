@@ -135,6 +135,28 @@ function Announcements () {
     )
   })
 
+  const content = announcementItems.length > 0 ? (
+    <Grid
+      container
+      direction='column'
+      alignItems='center'
+      spacing={10}
+      className={classes.announcementsList}
+    >
+      {announcementItems}
+    </Grid>
+  ) : (
+    <Typography
+      variant='body1'
+      style={{
+        marginTop: '30px',
+        textAlign: 'center',
+      }}
+    >
+      There are currently no announcements. Stay tuned for more!
+    </Typography>
+  )
+
   return (
     <div
       className={classes.wrapper}
@@ -152,15 +174,7 @@ function Announcements () {
             Announcements
           </Box>
         </Typography>
-        <Grid
-          container
-          direction='column'
-          alignItems='center'
-          spacing={10}
-          className={classes.announcementsList}
-        >
-          {announcementItems}
-        </Grid>
+        {content}
       </div>
     </div>
   )

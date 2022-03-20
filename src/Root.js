@@ -158,6 +158,10 @@ function Root () {
             <Footer />
           </div>
         </main>
+      </div>
+    </ThemeProvider>
+    /*
+    To add an announcement snackbar, insert this after </main>.
         <Snackbar
           anchorOrigin={{
             vertical: 'bottom',
@@ -166,7 +170,7 @@ function Root () {
           open={betaNotificationIsOpen}
           autoHideDuration={10000}
           onClose={handleCloseBetaNotification}
-          message='Averi Studios has launched a new way to store your IDs!'
+          message='ANNOUNCEMENT HERE'
           action={
             <>
               <Button
@@ -187,8 +191,7 @@ function Root () {
             </>
           }
         />
-      </div>
-    </ThemeProvider>
+    */
   )
 }
 
