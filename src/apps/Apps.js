@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/styles'
 import { Typography, Box } from '@material-ui/core'
 import WorldScribe from './WorldScribe'
 import WorldScribe2 from './WorldScribe2'
+import Alfred from './Alfred'
 
 const useStyles = makeStyles({
   wrapper: {
@@ -37,6 +38,7 @@ function Apps () {
             Apps
           </Box>
         </Typography>
+        <Alfred />
         <WorldScribe2 />
         <WorldScribe />
       </div>
