@@ -87,6 +87,7 @@ function AnnouncementItem (props) {
                     src={`/images/announcements/${props.image}`}
                     alt={props.imageAlt === undefined ? '' : props.imageAlt}
                     style={{
+					  maxHeight: '500px',
                       maxWidth: '100vw'
                     }}
                   />

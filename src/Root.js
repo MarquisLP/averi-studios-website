@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles'
 import Intro from './Intro'
+import CompanyOverview from './CompanyOverview'
+import ContactUs from './ContactUs'
 import Apps from './apps/Apps'
 import Announcements from './announcements/Announcements'
 import Footer from './Footer'
@@ -43,9 +45,11 @@ function Root () {
   const classes = useStyles()
   const sectionRefs = {
     intro: useRef(null),
+    companyOverview: useRef(null),
     apps: useRef(null),
     team: useRef(null),
     announcements: useRef(null),
+	contactUs: useRef(null),
     footer: 'footer'
   }
 
@@ -140,6 +144,11 @@ function Root () {
         >
           <Intro />
           <div
+            ref={sectionRefs.companyOverview}
+          >
+	        <CompanyOverview/>
+		  </div>
+          <div
             ref={sectionRefs.apps}
           >
             <Apps />
@@ -154,6 +163,11 @@ function Root () {
           >
             <Announcements />
           </div>
+          <div
+            ref={sectionRefs.contactUs}
+          >
+	        <ContactUs />
+		  </div>
           <div>
             <Footer />
           </div>
