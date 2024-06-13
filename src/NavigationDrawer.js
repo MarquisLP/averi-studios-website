@@ -1,6 +1,6 @@
 import React from 'react'
 import { Drawer, List, ListItem, ListItemText, makeStyles, ListItemIcon } from '@material-ui/core'
-import { EmojiPeople as EmojiPeopleIcon, Apps as AppsIcon, People as PeopleIcon, Announcement as AnnouncementIcon, Email as EmailIcon } from '@material-ui/icons'
+import { EmojiPeople as EmojiPeopleIcon, Info as InfoIcon, Apps as AppsIcon, People as PeopleIcon, Announcement as AnnouncementIcon, Email as EmailIcon } from '@material-ui/icons'
 
 function NavigationDrawer (props) {
   const useStyles = makeStyles({
@@ -44,6 +44,23 @@ function NavigationDrawer (props) {
           </ListItemIcon>
           <ListItemText
             primary='Intro'
+          />
+        </ListItem>
+        <ListItem
+          button
+          onClick={() => {
+            props.setLastSelection('company-overview')
+            props.scrollToRef(props.sectionRefs.companyOverview)
+          }}
+          key='intro'
+        >
+          <ListItemIcon>
+            <InfoIcon
+              color='secondary'
+            />
+          </ListItemIcon>
+          <ListItemText
+            primary='Company Overview'
           />
         </ListItem>
         <ListItem
@@ -101,7 +118,7 @@ function NavigationDrawer (props) {
           button
           onClick={() => {
             props.setLastSelection('contact')
-            props.scrollToRef(props.sectionRefs.footer)
+            props.scrollToRef(props.sectionRefs.contactUs)
           }}
           key='contact'
         >
