@@ -47,7 +47,7 @@ function Alfred () {
             <Typography
               variant='subtitle1'
             >
-              An AI host who takes phone calls for restaurants
+              The helpful and tirelessly dedicated digital guru for your business
             </Typography>
           </div>
         </ExpansionPanelSummary>
@@ -57,7 +57,7 @@ function Alfred () {
           >
             <img
               className={classes.alfredIcon}
-              src={require('../assets/alfred_icon.svg')}
+              src={require('../assets/alfred_icon.png')}
               alt='Alfred logo'
             />
           </div>
