@@ -24,6 +24,9 @@ const useStyles = makeStyles({
 
 function AnnouncementItem (props) {
   const useStyles = makeStyles({
+	title: {
+	   maxWidth: 1000
+	},
     description: {
       marginTop: 20
     }
@@ -58,6 +61,7 @@ function AnnouncementItem (props) {
           </Grid>
           <Grid
             item
+			className={classes.title}
           >
             <Typography
               variant='h3'
